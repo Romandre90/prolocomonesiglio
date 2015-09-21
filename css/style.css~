@@ -1,0 +1,406 @@
+/*
+	Minimaxing by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/*********************************************************************************/
+/* Global                                                                        */
+/*********************************************************************************/
+
+/* Basic */
+
+	body {
+		font-size: 13.5pt;
+		font-family: sans-serif;
+		background-color: #e3e9dc;
+		font-family: 'Ubuntu Condensed', sans-serif;
+		color: #878e83;
+		letter-spacing: -1px;
+	}
+
+	h1,h2,h3,h4 {
+		color: #007897;
+		font-weight: normal;
+	}
+
+	h1,h2 {
+		
+	}
+
+	h2 {
+		font-size: 1.6em;
+		letter-spacing: -1px;
+		margin-bottom: 1em;
+	}
+
+	h3,h4 {
+		color: #283121;
+		margin-bottom: 0.5em;
+	}
+
+	h3 {
+		font-size: 1.2em;
+		margin-bottom: 0.8em;
+	}
+
+	h4 {
+		font-size: 1em;
+	}
+
+	p, ul {
+		margin-bottom: 1.25em;
+	}
+
+	p {
+		line-height: 1.8em;
+	}
+
+	strong {
+		color: #474e43;
+	}
+
+	img.left {
+		float: left;
+		margin: 2px 1.25em 0 0;
+	}
+
+	img.top {
+		margin: 4px 0 2.25em 0;
+	}
+
+	ul {
+		padding: 0.25em 0 0 0;
+	}
+
+	a {
+		color: #5d93a2;
+		text-decoration: underline;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	* > p:last-child {
+		margin-bottom: 0 !important;
+	}
+	nav li {
+	display: inline;
+	}
+
+/* Reusable */
+
+	article.blog-post {
+		position: relative;
+	}
+
+		article.blog-post .comments {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 32px;
+			line-height: 24px;
+			padding-left: 40px;
+			background: url('images/icon-bubble.png') no-repeat;
+		}
+
+	ul.small-image-list {
+	}
+
+		ul.small-image-list li {
+			overflow: hidden;
+			margin-bottom: 1.5em;
+		}
+
+	ul.big-image-list {
+	}
+
+		ul.big-image-list li {
+			overflow: hidden;
+			margin-bottom: 2em;
+		}
+
+	ul.link-list {
+	}
+
+		ul.link-list li {
+			border-top: solid 1px #ced0b7;
+			padding: 0.75em 0 0 0;
+			margin: 0.75em 0 0 0;
+		}
+		
+		ul.link-list li:first-child {
+			padding-top: 0;
+			margin-top: 0;
+			border-top: 0;
+		}
+
+	.button {
+		display: inline-block;
+		padding: 15px 25px 15px 25px;
+		background-color: #007b9d;
+		background-image: -moz-linear-gradient(top, #008dad, #007b9d);
+		background-image: -webkit-linear-gradient(top, #008dad, #007b9d);
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#008dad), to(#007b9d));
+		background-image: -ms-linear-gradient(top, #008dad, #007b9d);
+		background-image: -o-linear-gradient(top, #008dad, #007b9d);
+		background-image: linear-gradient(top, #008dad, #007b9d);
+		border-radius: 10px;
+		
+		text-decoration: none;
+		color: #fff;
+		font-size: 1.2em;
+		letter-spacing: -1px;
+		border: solid 1px #006e8b;
+		box-shadow: inset 0px 0px 0px 1px #18a8c8;
+	}
+
+	.button:hover {
+		background-color: #118eb1;
+		background-image: -moz-linear-gradient(top, #1b9fbe, #118eb1);
+		background-image: -webkit-linear-gradient(top, #1b9fbe, #118eb1);
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1b9fbe), to(#118eb1));
+		background-image: -ms-linear-gradient(top, #1b9fbe, #118eb1);
+		background-image: -o-linear-gradient(top, #1b9fbe, #118eb1);
+		background-image: linear-gradient(top, #1b9fbe, #118eb1);
+		box-shadow: inset 0px 0px 0px 1px #3ecceb;
+	}
+
+/*BREADCRUMBS*/
+.breadcrumbs
+{
+	font-size: 0.9em;
+	padding: 5px 20px;
+}
+
+.breadcrumbs span
+{
+	font-weight: bold;
+}
+	
+	
+/*TABLE*/
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;    
+}
+
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc; 
+    -moz-box-shadow: 0 1px 1px #ccc; 
+    box-shadow: 0 1px 1px #ccc;         
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;     
+}    
+    
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;    
+}
+
+.bordered th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+caption {
+    margin-top: 1em;
+    text-align:left;
+}
+
+.caption_forum h2{
+    margin-bottom: 0;
+}
+
+/*PAGINA DELLA DISCUSSIONE*/
+
+.titolo_discussione{
+    text-align: right;
+}
+.titolo_discussione h2{
+    margin-bottom: 0;
+    text-align: right;
+}
+ /*Tabella ed impaginazione*/
+.discussione{
+   border-style: none;
+   font-size: 12pt;
+   color: #283121;
+   letter-spacing: 0px;
+   line-height: normal;
+   width: 100%;
+   margin-top: 15px;
+}
+/*DX*/
+.personale{
+    padding-left: 10%;
+    text-align: right;
+    padding-top: 5px;
+}
+/*SX*/
+.normale{
+    padding-right: 10%;
+    padding-top: 5px;
+}
+
+/*autore*/
+.discussione h2{
+    font-size: 18pt;
+    margin-bottom: 0;
+    display:inline;
+}
+
+/*testo*/
+
+.post {
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    margin-top: 0px;
+    background-color: #cdf466;
+    padding: 3px 5px 3px 5px;
+}
+
+#personale{
+    background-color:#66cdf4;
+}
+
+/*UTENTI*/
+/*MENU OPERAZIONI UTENTI*/
+.portlet
+{
+	/*width: 340px;
+	height: 280px;*/
+    margin-top: 1em;
+	background: #fff;
+	border-radius: 3px;
+	border: 1px solid #ccc;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+	-webkit-animation-name: bounceIn;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: linear;
+	-moz-animation-name: bounceIn;
+	-moz-animation-fill-mode: both;
+	-moz-animation-duration: 1s;
+	-moz-animation-iteration-count: 1;
+	-moz-animation-timing-function: linear;
+	animation-name: bounceIn;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+}
+
+.portlet-decoration
+{
+	padding: 3px 8px;
+	border-left: 5px solid #6FACCF;
+}
+
+.portlet-title
+{
+	font-style:inherit;
+	font-size: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+.portlet-content
+{
+	font-size:0.9em;
+	margin: 0 0 15px 0;
+	padding: 5px 8px;
+	border-left: 5px solid #6FACCF;
+}
+
+.portlet-content ul
+{
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+
+.portlet-content li
+{
+	padding: 2px 0 4px 0px;
+}
+
+/*elenco principale*/
+
+.user
+{
+	color: inherit;
+	border: thin;
+	border-style: solid;
+	border-color: black;
+	border-radius: 3px;
+	padding: 3px 8px;
+	margin-bottom: 1em;
+}
+
+.user b
+{
+	color: #007294;
+}
+
