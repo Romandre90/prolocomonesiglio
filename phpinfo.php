@@ -1,4 +1,4 @@
 <?php
-Dai su
+echo"non so piu che dire";
 phpinfo();
 ?>
