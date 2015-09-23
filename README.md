@@ -1,2 +1,0 @@
-# prolocomonesiglio
-forum proloco monesiglio
