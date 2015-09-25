@@ -54,7 +54,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=prolocom43952',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => 'root',
+			'password' => 'secret',
 			'charset' => 'utf8',
 		),
 		

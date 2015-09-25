@@ -36,7 +36,7 @@
 									<?php $this->widget('zii.widgets.CMenu',array(
 										'items'=>array(
 											array('label'=>'Homepage', 'url'=>array('/')),
-											array('label'=>'Forum', 'url'=>array('/discussione', 'view'=>'about')),
+											array('label'=>'Forum', 'url'=>array('/discussioni', 'view'=>'about')),
 											array('label'=>'Prossimo Evento', 'url'=>array('/site/prossimo_evento')),
 											array('label'=>'Facebook', 'url'=>array('https://www.facebook.com/proloco.monesiglio')),
 											array('label'=>'Direttivo', 'url'=>array('/site/direttivo', 'view'=>'about')),

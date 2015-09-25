@@ -15,19 +15,20 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
+	
+	
+	
 	public function authenticate()
 	{
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
+		$user = Utenti::model()->findByAttributes(array('Email'=>$this->username, 'Password'=>$this->password ));
+		if($user)
+		{
+			Yii::app()->user->setState('username',$user->Nome);
+			Yii::app()->user->setState('PRO',$user->Pro);
+			Yii::app()->user->setState('ID',$user->ID);
+			Yii::app()->user->setState('returnUrl',"/");
+			$this->errorCode = 0;
+		}
+		else $this->errorCode = self :: USERNAME_PASSWORD_INVALID;
 	}
 }
